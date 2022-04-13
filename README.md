@@ -2,9 +2,11 @@
 
 This is the code related to the paper [Using a frustratingly easy domain and tagset adaptation for creating slavic named entity recognition systems](https://www.aclweb.org/anthology/2021.bsnlp-1.12/). It is a NER system which applies a Frustrantinglu Easy Domain Adaptation model not only to increase the data available for training the models but also for changing the possible tagset used to annotate.
 
+Each model (see below where to find them) can provide multiple and different tagsets. Do you want need products? or events? or time? Just activate in the configuration annotate_as_dataset and your data will be annotated according to specific tagsets.
+
 # Where to find the models?
 
-You can find all the trained models in [HuggingFace](https://huggingface.co/creat89). The models are NER_FEDA_*
+You can find all the trained models in [HuggingFace](https://huggingface.co/creat89). The models are NER_FEDA\_*. Although the models were trained mostly using Slavic languages, most of the models are multilingual as they fine-tuned LabSE.
 
 # How to train a model?
 
