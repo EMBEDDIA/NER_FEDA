@@ -48,7 +48,6 @@ python training_NER_multidata.py \
 			--data_path "$DATASET_PATH/annotated/${TOPIC}/${LANGUAGE_SET}" \
 			--output_saving_path "$DATASET_PATH/predictions/$EXPERIMENT/$TOPIC/$LANGUAGE_SET" \
 			--special_labels \
-			--seed 12 \
 			--tags2use "NER_IOBES" \
 			--crf \
 			--no_dev \
@@ -62,7 +61,7 @@ python training_NER_multidata.py \
 			--annotate_as_dataset 1
 ```
 
-Where annotate_as_dataset indicates which tagset (based on the model used) should be used. The ID of the dataset starts at 0, and 1 means in all models SlavNER 2021. See the HuggingFace models to see which tagsets are available.
+Where annotate_as_dataset indicates which tagset (based on the model used) should be used. The ID of the dataset starts at 0, and 1 means in all models SlavNER 2021. See the HuggingFace models to see which tagsets are available. Use the uppercase flag if the models was trained with uppercase process.
 
 # How to cite this work?
 
