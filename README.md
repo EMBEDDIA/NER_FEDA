@@ -2,6 +2,68 @@
 
 This is the code related to the paper [Using a frustratingly easy domain and tagset adaptation for creating slavic named entity recognition systems](https://www.aclweb.org/anthology/2021.bsnlp-1.12/). It is a NER system which applies a Frustrantinglu Easy Domain Adaptation model not only to increase the data available for training the models but also for changing the possible tagset used to annotate.
 
+# Where to find the models?
+
+You can find all the trained models in [HuggingFace](https://huggingface.co/creat89). The models are NER_FEDA_*
+
+# How to train a model?
+
+You can use this script:
+
+```
+python training_NER_multidata.py \
+		--experiment  $EXPERIMENT\
+		--model_saving_path $OUTPUT_DIR \
+		--data_path $DATASET_PATH/$LANGUAGE \
+		--special_labels \
+		--seed 12 \
+		--epochs 20 \
+		--early_stop 2 \
+		--tags2use "NER_IOBES" \
+		--crf \
+		--dev_file "dev_*" \
+		--train_file "train_*" \
+		--no_test \
+		--file_extension "txt" \
+		--ner_col 2 \
+		--bert_model $BERT \
+		--separator "\t" \
+		--multidata_model "Daume" \
+		--train \
+		--predict "Dev" \
+		--uppercase \
+		--uppercase_percentage 0.05 \
+		--train_batch_size $BATCH_NORMAL \
+		--masking_percentage 0.25
+```
+
+# How to run the code and get predictions?
+
+Here is an example of th code:
+
+```
+python training_NER_multidata.py \
+			--experiment  $EXPERIMENT \
+			--model_saving_path $MODEL_PATH \
+			--data_path "$DATASET_PATH/annotated/${TOPIC}/${LANGUAGE_SET}" \
+			--output_saving_path "$DATASET_PATH/predictions/$EXPERIMENT/$TOPIC/$LANGUAGE_SET" \
+			--special_labels \
+			--seed 12 \
+			--tags2use "NER_IOBES" \
+			--crf \
+			--no_dev \
+			--test_file "*" \
+			--file_extension "lacd" \
+			--ner_col 2 \
+			--separator "\t" \
+			--multidata_model "Daume" \
+			--predict "Test" \
+			--uppercase \
+			--annotate_as_dataset 1
+```
+
+Where annotate_as_dataset indicates which tagset (based on the model used) should be used. The ID of the dataset starts at 0, and 1 means in all models SlavNER 2021. See the HuggingFace models to see which tagsets are available.
+
 # How to cite this work?
 
 Please cite this work using the following paper:
