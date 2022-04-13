@@ -4,7 +4,7 @@ This is the code related to the paper [Using a frustratingly easy domain and tag
 
 Each model (see below where to find them) can provide multiple and different tagsets. Do you want need products? or events? or time? Just activate in the configuration annotate_as_dataset and your data will be annotated according to specific tagsets.
 
-The models got the 2nd place at [SlavNER 2021](http://bsnlp.cs.helsinki.fi/shared-task.html) and has been used to annotate [ews articles](https://clarin.si/repository/xmlui/handle/11356/1485) in Estonian, Croatian, and Latvian.
+The models got the 2nd place at [SlavNER 2021](http://bsnlp.cs.helsinki.fi/shared-task.html) and has been used to annotate [news articles](https://clarin.si/repository/xmlui/handle/11356/1485) in Estonian, Croatian, and Latvian.
 
 # Where to find the models?
 
