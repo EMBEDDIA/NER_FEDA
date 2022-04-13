@@ -2,6 +2,8 @@
 
 This is the code related to the paper [Using a frustratingly easy domain and tagset adaptation for creating slavic named entity recognition systems](https://www.aclweb.org/anthology/2021.bsnlp-1.12/). It is a NER system which applies a Frustrantingly Easy Domain Adaptation model not only to increase the data available for training the models but also for changing the possible tagset used to annotate.
 
+![FEDA](https://user-images.githubusercontent.com/17121539/163153274-2ac4c07b-f5eb-470f-bb7d-78d0d69c9727.jpg)
+
 Each model (see below where to find them) can provide multiple and different tagsets. Do you want need products? or events? or time? Just activate in the configuration annotate_as_dataset and your data will be annotated according to specific tagsets.
 
 The models got the 2nd place at [SlavNER 2021](http://bsnlp.cs.helsinki.fi/shared-task.html) and has been used to annotate [news articles](https://clarin.si/repository/xmlui/handle/11356/1485) in Estonian, Croatian, and Latvian.
